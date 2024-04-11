@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art School</title>
+    <style>
+        body {
+            background-color:#FFF0F0;
+            background-size: cover;
+            background-position: center;
+            color: black; /* Set text color to black */
+            font-family: Gelasio, inter;
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+        }
+.logo {
+    position: absolute;
+    top: 40px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
+    width: 100px; /* Default width for larger screens */
+    height: 100px; /* Default height for larger screens */
+    border-radius: 50%; /* Make the logo round */
+    overflow: hidden; /* Ensure content within the logo does not overflow */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .logo {
+        width: 50px; /* Adjust the width for smaller screens */
+        height: 50px; /* Adjust the height for smaller screens */
+        top: 7px; /* Adjust top position for smaller screens */
+        left: 160px; /* Adjust left position for smaller screens */
+    }
+}
+
+
+
+.contact {
+    text-align: center;
+}
+
+.contact-buttons {
+    margin-top: 20px;
+    display: flex; /* Added flex display */
+    justify-content: center; /* Centering the buttons */
+}
+
+.blog-button,
+.insta-button,
+.whatsapp-button,
+.google-maps-button {
+    display: inline-block;
+    margin-right: 20px; /* Increased margin for spacing */
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+}
+
+.blog-button img,
+.insta-button img,
+.whatsapp-button img,
+.google-maps-button img {
+    width: 100%; /* Adjusted image size */
+    height: 100%; /* Adjusted image size */
+    vertical-align: middle;
+}
+
+
+        header {
+            background-color:#F0EAD6;
+            color: black; /* Set text color to black */
+            text-align: center;
+            padding: 15px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            text-color: black; /* There's no 'text-color' property, you might want to remove this */
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+         .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.feature {
+    flex: 0 0 calc(33.33% - 20px); /* Three items in a row with 20px spacing */
+    max-width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+}
+
+.feature img {
+    width: 100%;
+    height: auto;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .feature {
+        flex: 0 0 calc(50% - 20px); /* Two items in a row on smaller screens */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .feature {
+        flex: 0 0 100%; /* Single item in a row on even smaller screens */
+        max-width: 100%;
+    }
+}
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white; /* Set text color to black */
+            text-decoration: none;
+            padding: 15px 15px;
+            display: block;
+        }
+        .slider-container {
+            max-width: 560px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .slider {
+            width: 100%;
+            position: relative;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 18px;
+            z-index: 1;
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
+        @media screen and (max-width: 768px) {
+            .prev, .next {
+                font-size: 14px;
+            }
+            nav {
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+            nav a {
+                padding: 10px 25px;
+            }
+        }
+        /* Media queries for responsive hero section */
+        @media only screen and (min-width: 300px) {
+            .hero {
+                padding: 10px;
+                margin: 0 auto;
+                display: block;
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 600px) {
+            .hero {
+                padding: 20px;
+                margin: 0 auto;
+                display: block;
+                width: 90%;
+            }
+        }
+        @media only screen and (min-width: 992px) {
+            .hero {
+                padding: 30px;
+                margin: 0 auto;
+                display: block;
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1200px) {
+            .hero {
+                padding: 40px;
+                margin: 0 auto;
+                display: block;
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+<div class="container">
+      <div class="logo">
+        <img src="hello.jpg" alt="Your Logo" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <h1>Welcome to Paint 'n' Brush</h1>
+    <p>Unlock Your Creativity</p>
+</header>
+<nav>
+    <a href="fourth.html">About</a>
+    <a href="first.html">Art showcase</a>
+    <a href="hi.html">Testimonials</a>
+    <a href="second.html">Faculty</a>    
+    <a href="#contact">Contact</a>
+</nav>
+<section id="courses" class="hero">
+    <h2>Our Courses</h2>
+    <div class="container">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide"><img src="a.jpg" alt="Image 1"></div>
+                    <div class="slide"><img src="b.jpg" alt="Image 2"></div>
+                    <div class="slide"><img src="c.jpg" alt="Image 3"></div>
+                      <div class="slide"><img src="e.jpg" alt="Image 3"></div>
+                    
+  <div class="slide"><img src="f.jpg" alt="Image 3"></div>
+                    
+  <div class="slide"><img src="x.jpg" alt="Image 3"></div>
+                    
+  <div class="slide"><img src="g.jpg" alt="Image 3"></div>
+                    
+  <div class="slide"><img src="ki.jpg" alt="Image 3"></div>
+                    
+  <div class="slide"><img src="h.jpg" alt="Image 3"></div>
+                    
+  <div class="slide"><img src="i.jpg" alt="Image 3"></div>
+                    
+
+                </div>
+                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                <a class="next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="faculty" class="features">
+    <div class="feature">
+        <h3>Expert Instructors</h3>
+        <img src="pic.jpg" alt="Instructor">
+        <p>Learn from experienced artists and instructors.</p>
+    </div>
+    <div class="feature">
+        <h3>State-of-the-Art Facilities</h3>
+        <img src="13.jpg" alt="Facilities">
+        <p>Access to modern studios and equipment.</p>
+    </div>
+    <div class="feature">
+        <h3>Schedule</h3>
+        <img src="z.jpg" alt="Schedules">
+        <p>Enroll now and start your journey into art</p>
+    </div>
+</section>
+
+<section id="contact" class="hero">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Get in touch to learn more about our programs.</p>
+        <p>Email: paintnb@gmail.com</p>
+        <p>Phone: +91 7760676676</p>
+        <div class="contact-buttons">
+            <a href="https://wa.me/917760676676" target="_blank" class="whatsapp-button">
+                <img src="what.jpg" alt="WhatsApp">
+            </a>
+            <a href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x3bae15399af30ca9:0x851c72168c2596ed?entry=s&sa=X&ved=1t:8290&hl=en-in&ictx=111" target="_blank" class="google-maps-button">
+                <img src="map.jpg" alt="Google Maps">
+            </a>
+             <a href="https://www.instagram.com/paintnbrush_arts?igsh=dG4xemh3bnMzN3pr" target="_blank" class="insta-button">
+                <img src="inst.jpg" alt="instagram">
+             </a>
+           <a href="https://meenalondey.blogspot.com/?m=1" target="_blank" class="blog-button">
+                <img src="haha.jpg" alt="blog">
+             </a>
+
+        </div>
+    </div>
+</section>
+
+</section>
+<footer>
+    <p>&copy; 2024 Paint 'n' Brush. All rights reserved.</p>
+</footer>
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlides() {
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        } else if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        }
+        slides.forEach(slide => {
+            slide.style.display = 'none';
+        });
+        slides[slideIndex].style.display = 'block';
+        adjustSliderHeight();
+    }
+
+    function moveSlide(n) {
+        slideIndex += n;
+        showSlides();
+    }
+
+    function adjustSliderHeight() {
+        const activeSlide = slides[slideIndex];
+        const img = activeSlide.querySelector('img');
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+        const slider = document.querySelector('.slider');
+        slider.style.height = slider.offsetWidth / aspectRatio + 'px';
+    }
+
+    window.addEventListener('resize', adjustSliderHeight);
+
+    showSlides();
+</script>
+</body>
+</html>

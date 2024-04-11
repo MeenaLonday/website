@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Image Slider</title>
+<style>
+body {
+    background-color: #F0EAD6;
+    color: black; /* Set text color to black */
+    font-family: Gelasio, inter;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.slider-container {
+    max-width: 100%;
+    width: 500px;
+    position: relative;
+    overflow: hidden;
+margin-top: 20px;
+}
+
+.slider {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .slider-container {
+        width: 100%;
+    }
+    .prev, .next {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .slider-container {
+        width: 100%;
+    }
+    .prev, .next {
+        font-size: 12px;
+    }
+}
+
+.content {
+    max-width: 100%;
+    width: 100%; /* Set width to 100% */
+    padding: 0; /* Remove padding */
+    line-height: 1.6; /* Increase line height */
+}
+
+.content p {
+    margin-bottom: 20px; /* Add margin between paragraphs */
+}
+</style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="14.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="13.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="15.jpg" alt="Image 3"></div>
+            <!-- Add more slides here -->
+        </div>
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    </div>
+</div>
+
+<div class="content">
+    <p>Nestled amidst the vibrant streets of JP Nagar 5th Phase, Bangalore, Paint 'n' Brush stands as a beacon of artistic exploration and expression. As the clock strikes 5 in the evening, the doors of this enchanting art studio open to welcome eager minds and aspiring artists from all walks of life. The ambiance within is serene, adorned with colorful canvases adorning the walls, and the scent of creativity lingering in the air. Here, under the gentle guidance of seasoned instructors, participants embark on a transformative journey through the world of art.</p>
+
+    <p>From the youngest enthusiasts to seasoned veterans, Paint 'n' Brush caters to all ages and skill levels, fostering an inclusive and supportive community. Students gather around easels, their palettes brimming with an array of vibrant hues, ready to translate their imagination onto canvas. With each stroke of the brush, they delve deeper into the realm of creativity, exploring diverse techniques and styles.</p>
+
+    <p>At Paint 'n' Brush, the learning experience extends beyond the technical aspects of painting. It's a space where individuals are encouraged to embrace their unique artistic voices, where mistakes are celebrated as part of the creative process, and where self-expression knows no bounds. Through personalized guidance and constructive feedback, students not only refine their skills but also gain confidence in their abilities.</p>
+
+    <p>As the golden hues of twilight bathe the studio in a warm glow, the energy within Paint 'n' Brush remains palpable. Laughter and camaraderie fill the air as participants share stories, exchange tips, and marvel at each other's creations. Whether it's capturing the play of light on a serene landscape or expressing emotions through abstract forms, every brushstroke tells a story—a testament to the endless possibilities that unfold within the walls of Paint 'n' Brush.</p>
+</div>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlides() {
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        } else if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        }
+        slides.forEach(slide => {
+            slide.style.display = 'none';
+        });
+        slides[slideIndex].style.display = 'block';
+        adjustSliderHeight();
+    }
+
+    function moveSlide(n) {
+        slideIndex += n;
+        showSlides();
+    }
+
+    function adjustSliderHeight() {
+        const activeSlide = slides[slideIndex];
+        const img = activeSlide.querySelector('img');
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+        const slider = document.querySelector('.slider');
+        slider.style.height = slider.offsetWidth / aspectRatio + 'px';
+    }
+
+    window.addEventListener('resize', adjustSliderHeight);
+
+    showSlides();
+</script>
+
+</body>
+</html>

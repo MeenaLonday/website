@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Showcase</title>
+<style>
+    body {
+        background-color:#F0EAD6;
+        color: black;
+        font-family: Gelasio, inter;
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6; /* Adjust line-height for better readability */
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .heading {
+        text-align: left;
+        margin-bottom: 25px;
+        font-size: 30px;
+    }
+
+    .slider-container {
+        max-width: 560px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .slider {
+        width: 100%;
+        position: relative;
+    }
+
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slide {
+        width: 100%;
+    }
+
+    .p {
+        font-size: 14px;
+        margin: 0px;
+        padding: 5px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: cover;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        font-size: 18px;
+        z-index: 1;
+    }
+
+    .prev {
+        left: 0;
+    }
+
+    .next {
+        right: 0;
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+        .prev, .next {
+            font-size: 14px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .prev, .next {
+            font-size: 12px;
+        }
+    }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <h1 class="heading">Student Showcase</h1>
+    <div class="container">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide"><img src="6.jpg" alt="Image 1"></div>
+                    <div class="slide"><img src="7.jpg" alt="Image 2"></div>
+                    <div class="slide"><img src="8.jpg" alt="Image 3"></div>
+                    <div class="slide"><img src="10.jpg" alt="Image 3"></div>
+                    <div class="slide"><img src="1.jpg" alt="Image 3"></div>
+                    <div class="slide"><img src="2.jpg" alt="Image 3"></div>
+ <div class="slide"><img src="12.jpg" alt="Image 3"></div>
+<div class="slide"><img src="21.jpg" alt="Image 3"></div> 
+ <div class="slide"><img src="30.jpg" alt="Image 3"></div>  <div class="slide"><img src="31.jpg" alt="Image 3"></div>  
+<div class="slide"><img src="54.jpg" alt="Image 3"></div>
+  <div class="slide"><img src="33.jpg" alt="Image 3"></div>
+  <div class="slide"><img src="34.jpg" alt="Image 3"></div>  
+<div class="slide"><img src="35.jpg" alt="Image 3"></div>
+  <div class="slide"><img src="36.jpg" alt="Image 3"></div>  
+<div class="slide"><img src="37.jpg" alt="Image 3"></div>  
+<div class="slide"><img src="38.jpg" alt="Image 3"></div>  
+ <div class="slide"><img src="40.jpg" alt="Image 3"></div> 
+ <div class="slide"><img src="41.jpg" alt="Image 3"></div> 
+<div class="slide"><img src="50.jpg" alt="Image 3"></div>
+<div class="slide"><img src="51.jpg" alt="Image 3"></div>
+<div class="slide"><img src="52.jpg" alt="Image 3"></div>
+ <div class="slide"><img src="53.jpg" alt="Image 3"></div> 
+
+<div class="slide"><img src="16.jpg" alt="Image 3"></div>
+<div class="slide"><img src="5.jpg" alt="Image 3"></div>
+<div class="slide"><img src="4.jpg" alt="Image 3"></div>
+ <div class="slide"><img src="lol.jpg" alt="Image 3"></div> 
+<div class="slide"><img src="14.jpg" alt="Image 3"></div>
+<div class="slide"><img src="15.jpg" alt="Image 3"></div>
+<div class="slide"><img src="18.jpg" alt="Image 3"></div>
+ <div class="slide"><img src="19.jpg" alt="Image 3"></div> 
+<div class="slide"><img src="20.jpg" alt="Image 3"></div>
+<div class="slide"><img src="22.jpg" alt="Image 3"></div>
+<div class="slide"><img src="23.jpg" alt="Image 3"></div>
+ <div class="slide"><img src="24.jpg" alt="Image 3"></div> 
+
+                </div>
+                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                <a class="next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
+        </div>
+    </div>
+    <div class="description">
+        <p>Step into our vibrant art class, where creativity knows no bounds and every stroke tells a story. As you wander through the gallery space, your senses are greeted with a symphony of colors, shapes, and textures, each piece a testament to the boundless imagination of our students. From intricate oil paintings capturing the essence of nature's beauty to avant-garde sculptures pushing the boundaries of conventional art, every corner unveils a new narrative waiting to be explored. Vibrant abstract compositions dance alongside meticulously detailed portraits, offering a glimpse into the diverse artistic journeys embarked upon within these walls. With every brushstroke and sculptural form, the passion and dedication of our students shine through, creating an immersive experience that transcends the boundaries of the canvas and invites you to embark on a journey of artistic discovery.</p>
+    </div>
+</div>
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlides() {
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        } else if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        }
+        slides.forEach(slide => {
+            slide.style.display = 'none';
+        });
+        slides[slideIndex].style.display = 'block';
+        adjustSliderHeight();
+    }
+
+    function moveSlide(n) {
+        slideIndex += n;
+        showSlides();
+    }
+
+    function adjustSliderHeight() {
+        const activeSlide = slides[slideIndex];
+        const img = activeSlide.querySelector('img');
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+        const slider = document.querySelector('.slider');
+        slider.style.height = slider.offsetWidth / aspectRatio + 'px';
+    }
+
+    window.addEventListener('resize', adjustSliderHeight);
+
+    showSlides();
+</script>
+</body>
+</html>
