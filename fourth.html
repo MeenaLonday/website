@@ -55,18 +55,18 @@
   font-weight: 700;
   font-style: italic;
 }
-
 body {
     background-color: #F0EAD6;
-    color: black; /* Set text color to black */
-    font-family: Gelasio, inter;
-    font-size: 18px;
+    color: #333; /* Changed text color to a darker shade for better readability */
+    font-family: 'Inter', sans-serif; /* Changed font to Inter with fallback to sans-serif */
+    font-size: 16px; /* Slightly reduced font size for better readability */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    line-height: 1.6; /* Increased line height for better readability */
 }
 
 .slider-container {
@@ -74,7 +74,7 @@ body {
     width: 500px;
     position: relative;
     overflow: hidden;
-margin-top: 20px;
+    margin-top: 20px;
 }
 
 .slider {
@@ -107,7 +107,7 @@ img {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     z-index: 1;
 }
 
@@ -122,27 +122,20 @@ img {
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     .slider-container {
-        width: 100%;
-    }
-    .prev, .next {
-        font-size: 14px;
+        width: 95%; /* Adjusted width for smaller screens */
     }
 }
 
 @media screen and (max-width: 576px) {
     .slider-container {
-        width: 100%;
-    }
-    .prev, .next {
-        font-size: 12px;
+        width: 100%; /* Adjusted width for even smaller screens */
     }
 }
 
 .content {
-    max-width: 100%;
+    max-width: 90%;
     width: 100%; /* Set width to 100% */
-    padding: 0; /* Remove padding */
-    line-height: 1.6; /* Increase line height */
+    padding: 20px; /* Added padding for content */
 }
 
 .content p {
@@ -212,3 +205,4 @@ img {
 
 </body>
 </html>
+
